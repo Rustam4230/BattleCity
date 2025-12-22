@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\projectMVS\BattleCity\build\CMakeFiles\adebccd43cde04d7e0e170796361d0fe\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\projectMVS\BattleCity\external\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\projectMVS\BattleCity\external\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D:\projectMVS\BattleCity\external\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="D:\projectMVS\BattleCity\build\external\glfw\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2E3A735B-1B51-3DBB-A94F-7381C85D8D32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{43143605-EECF-3D26-874E-3536D56A7B31}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

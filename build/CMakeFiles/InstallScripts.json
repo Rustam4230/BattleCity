@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/projectMVS/BattleCity/build/cmake_install.cmake",
+		"D:/projectMVS/BattleCity/build/external/glfw/cmake_install.cmake",
+		"D:/projectMVS/BattleCity/build/external/glfw/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
