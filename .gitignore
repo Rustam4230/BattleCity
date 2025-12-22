@@ -1,1 +1,57 @@
-build_clean
+# Игнорировать ВСЕ папки сборки CMake
+build*/
+build_*/
+out/
+x64/
+Release/
+Debug/
+*.dir/
+
+# Файлы Visual Studio/CMake
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+
+# Игнорировать все в папках библиотек, кроме исходного кода
+external/glad/CMakeFiles/
+external/glfw/CMakeFiles/
+external/*/Release/
+external/*/Debug/
+external/*/*.dir/
+
+# Результаты компиляции
+*.exe
+*.lib
+*.dll
+*.pdb
+*.ilk
+*.obj
+*.o
+
+# Служебные файлы IDE
+.vs/
+.idea/
+*.user
+*.suo
+*.sdf
+*.opensdf
+
+# Игнорировать специфичные файлы сборки
+BattleCity.slnx
+GLFW.slnx
+
+# Игнорировать временные файлы библиотек (но не исходный код!)
+external/glad/CMakeFiles/
+external/glad/*.lib
+external/glad/*.pdb
+external/glad/*.obj
+external/glad/*.exe
+
+external/glfw/CMakeFiles/
+external/glfw/*.slnx
+external/glfw/*.lib
+external/glfw/*.pdb
