@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+
+project(Glad)
+
+file(GLOB GLAD_SOURCES D:/projectMVS/BattleCity/external/glad/src)
+file(GLOB GLAD_HEADERS D:/projectMVS/BattleCity/external/glad/include/glad)
+add_library(glad 
+    include/glad/glad.h  # Полный относительный путь
+    src/glad.c)
+
+target_include_directories(glad PUBLIC include/)
