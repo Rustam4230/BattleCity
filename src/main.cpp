@@ -2,6 +2,20 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+int g_windowSizeX = 640;
+int g_windowSizeY = 480;
+
+void glfwWindowSizeCallback(GLFWwindow* pWindow, int width, int height) {
+    int g_windowSizeX = width;
+    int g_windowSizeY = height;
+    glViewport(0, 0, g_windowSizeX, g_windowSizeY);
+}
+
+void glfwKeyCallback(GLFWwindow* pWindow, int key, int scancode, int action, int mode) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(pWindow, GL_TRUE);
+    }
+}
 int main(void)
 {
     // Инициализация GLFW
@@ -16,31 +30,33 @@ int main(void)
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Создание окна
-    GLFWwindow* window = glfwCreateWindow(640, 480, "BattleCity", NULL, NULL);
-    if (!window) {
+    GLFWwindow* pWindow = glfwCreateWindow(g_windowSizeX, g_windowSizeY, "Battle City", nullptr, nullptr);
+    if (!pWindow) {
         std::cout << "Failed to create GLFW window!" << std::endl;
         glfwTerminate();
         return -1;
     }
 
-    glfwMakeContextCurrent(window);
+    glfwSetWindowSizeCallback(pWindow, glfwWindowSizeCallback);
+    glfwSetKeyCallback(pWindow, glfwKeyCallback);
+    glfwMakeContextCurrent(pWindow);
 
     // Загрузка GLAD
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!gladLoadGL()) {
         std::cout << "Failed to initialize GLAD!" << std::endl;
         glfwTerminate();
         return -1;
     }
-
-    std::cout << "OpenGL " << GLVersion.major << "." << GLVersion.minor << std::endl;
+    std::cout << "Renderer" << glGetString(GL_RENDERER) << std::endl;
+    std::cout << "OpenGL version:" << glGetString(GL_VERSION) << std::endl;
 
     // Установка цвета очистки (желтый)
-    glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
 
     // Основной цикл
-    while (!glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(pWindow)) {
         glClear(GL_COLOR_BUFFER_BIT);
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(pWindow);
         glfwPollEvents();
     }
 
